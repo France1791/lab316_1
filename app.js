@@ -1,5 +1,11 @@
 
-
+// Menu data structure 
+var menuLinks = [
+  { text: 'about', href: '/about' },
+  { text: 'catalog', href: '/catalog' },
+  { text: 'orders', href: '/orders' },
+  { text: 'account', href: '/account' },
+];
 // Select and cache the <main> element in a variable named mainEl.
 
 const mainEl = document.querySelector("main");
@@ -29,6 +35,13 @@ topMenuEl.style.backgroundColor = topMenuColor;
 
 // Add a class of flex-around to topMenuEl.
 topMenuEl.classList = 'flex-around';
+
+for( let i = 0; i < menuLinks.length; i++){
+    const menuAEl = document.createElement('a');
+    menuAEl.setAttribute('href',menuLinks[i]);
+    menuAEl.textContent = menuLinks[i].text;
+    topMenuEl.appendChild(menuAEl);
+}
 
 
 
